@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+
+.wrap{
+   width: 360px;
+   margin: 20px auto;
+
+    h2{
+        text-align: center;
+    }
+
+    .container{
+        width: 360px;
+        margin-top: 15px;
+        border: 5px solid #000;
+        border-radius: 20px;
+        padding: 10px;
+    
+        .content{
+            width: 330px;
+            height: 320px;
+            border: 1px solid #ccc;
+            position: relative;
+
+            #snake-wrap{
+                &>div{
+                    width: 10px;
+                    height: 10px;
+                    background-color: #000;
+                    border: 1px solid #fff;
+                    position: absolute;
+                }
+            }
+
+            #food{
+                width: 10px;
+                height: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                position: absolute;
+                z-index: 9999;
+                &>div{
+                    width: 4px;
+                    height: 4px;
+                    background-color: red;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    
+        .other{
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .pay{
+        width: 90%;
+        height: 50px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #000;
+        border-radius: 4px;
+        &:active{
+            background-color: #f1f1f1;
+        }
+    }
+
+    .switch{
+        padding: 4px 10px;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 2px;
+        float: right;
+    }
+
+    .controle{
+        width: 80%;
+        height: 100px;
+        margin: 40px auto;
+        position: relative;
+
+        .menu{
+            width: 90px;
+            height: 90px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 58%;
+            top: 50%;
+            &:active{
+                background-color: #f1f1f1;
+            }
+            &>span{
+                transform: rotate(-45deg);
+            }
+            &.top{
+                transform: rotate(45deg) translate(-100%);
+            }
+            &.bottom{
+                transform: rotate(45deg) translate(-0%, 100%);
+            }
+            &.left{
+                transform: rotate(45deg) translate(-100%, 100%);  
+            }
+            &.right{
+                transform: rotate(45deg) translate(0%, 0%);
+                
+            }
+        }
+    }
+}
+
+
